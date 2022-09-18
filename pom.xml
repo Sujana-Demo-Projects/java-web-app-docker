@@ -8,13 +8,13 @@
 	<version>1.0</version>
 	
 	<name>Maven Web Application</name>
-	<url>http://mithuntechnologies.com</url>
+	<url>http://softwaresolutions.com</url>
 	
 	<description>Maven Web Project</description>
 
 	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
+		<name>software solutions</name>
+		<url>http://softwaresolutions.com/</url>
 	</organization>
 
 	<properties>
@@ -23,6 +23,9 @@
 		<spring.version>5.0.7.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.login>78e3196f17e668083d275391cdfd4355e21472b5</sonar.login>
+		<sonar.organization>demo-projects1</sonar.organization>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
@@ -98,18 +101,18 @@
 
 	</dependencies>
 	
-	<!-- <distributionManagement>
+	<distributionManagement>
 	    <repository>
-	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.235.8.113:8081/repository/flipkart-release/</url>
+	      <id>jfrog</id>
+	      <name>a0rszezb3fpae-artifactory-primary-1-releases</name>
+	      <url>https://demoprojects.jfrog.io/artifactory/MAVEN</url>
 	    </repository>
 	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.235.8.113:8081/repository/flipkart-snapshot/</url>
+	      <id>jfrog</id>
+	      <name>a0rszezb3fpae-artifactory-primary-1-snapshots</name>
+	      <url>https://demoprojects.jfrog.io/artifactory/MAVEN</url>
 	    </snapshotRepository>
-	</distributionManagement> -->
+	</distributionManagement>
 	
 	<build>
 		<plugins>
