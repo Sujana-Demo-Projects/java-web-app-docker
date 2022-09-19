@@ -23,9 +23,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: demoservice
+  name: demoprojectsvc
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector: 
     app: javawebapp
     version: "number"
