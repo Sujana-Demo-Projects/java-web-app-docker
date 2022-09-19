@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javawebapp-BUILD_NUMBER
+  name: javawebapp-number
 spec:
   replicas: 1
   selector:
     matchLabels:
           app: javawebapp
-          version: "BUILD_NUMBER"
+          version: "number"
   template:
     metadata:
       labels:
           app: javawebapp
-          version: "BUILD_NUMBER"
+          version: "number"
     spec:
       containers:
-      - name: javawebapp-BUILD_NUMBER
-        image: sujanadevops/javaappdemo:${BUILD_NUMBER}
+      - name: javawebapp-number
+        image: sujanadevops/javaappdemo:${number}
         ports:
         - containerPort: 8080
 ---
@@ -28,7 +28,7 @@ spec:
   type: NodePort
   selector: 
     app: javawebapp
-    version: "BUILD_NUMBER"
+    version: "number"
   ports:
     - port: 80
       targetPort: 8080
