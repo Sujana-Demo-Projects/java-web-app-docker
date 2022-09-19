@@ -1,7 +1,7 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javawebapp-ENVIRONMENT-BUILD_NUMBER
+  name: javawebapp-BUILD_NUMBER
 spec:
   replicas: 1
   template:
@@ -11,8 +11,7 @@ spec:
         version: "BUILD_NUMBER"
     spec:
       containers:
-      - name: javawebapp-ENVIRONMENT-BUILD_NUMBER
-        image: IMAGE
-        imagePullPolicy: IfNotPresent
+      - name: javawebapp-BUILD_NUMBER
+        image: sujanadevops/javaappdemo:${BUILD_NUMBER}
         ports:
         - containerPort: 8080
