@@ -43,6 +43,12 @@ pipeline{
                 sh "docker push sujanadevops/javaappdemo:${BUILD_NUMBER}"
             }
         }
+        stage('Anchore analyse') {  
+            steps {  
+                writeFile file: 'anchore_images', text: 'docker.io/sujanadevops/javaappdemo:${BUILD_NUMBER}'  
+                anchore name: 'anchore_images'  
+            }  
+        }
         stage("ChangingVersionInDeployment.yaml"){
             steps{
                 sh 'sed s/number/${BUILD_NUMBER}/g deployment.yml > demo.yaml'
