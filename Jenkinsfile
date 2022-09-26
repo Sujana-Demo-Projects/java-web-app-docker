@@ -45,8 +45,8 @@ pipeline{
         }
         stage('Anchore analyse') {  
             steps {  
-                writeFile file: 'anchore_images', text: 'docker.io/sujanadevops/javaappdemo:${BUILD_NUMBER}'  
-                anchore name: 'anchore_images'  
+                 writeFile file: 'anchore_images', text: 'docker.io/sujanadevops/javaappdemo:${BUILD_NUMBER}'  
+                 anchore name: 'anchore_images'  
             }  
         }
         stage("ChangingVersionInDeployment.yaml"){
